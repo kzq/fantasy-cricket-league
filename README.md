@@ -1,24 +1,11 @@
-# README
+# Fantasy Cricket League - A Rails 5 API application 
+------
+Cricket fans now can create their own fantasy team within their favourite cricket league. This application builds a rails 5 API with focus on the following features
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. API versioning (using constraints and accept headers)  
+2. User authentiacation with logins and JWT (JSON Web Tokens)
+3. CORS (Cross-origin HTTP request)
+4. API rate limits
+5. Token Expirations
+6. Active Model Serializer
+  
