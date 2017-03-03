@@ -23,7 +23,10 @@ gem 'puma', '~> 3.0'
 # gem 'capistrano-rails', group: :development
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors', require: 'rack/cors'
+
+# Use ActiveModelSerializers to bring convention over configuration to your JSON generation.
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :test do
   gem 'capybara'
