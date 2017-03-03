@@ -75,4 +75,11 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  # Use Rails url helpers for link generation, e.g., link(:resources) { resources_url }
+  # in ActiveModelSerializer
+  Rails.application.routes.default_url_options = {
+    host: 'api.localhost',
+    port: 3000
+  }
 end
