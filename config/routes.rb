@@ -1,9 +1,8 @@
+require 'api_constraints'
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json }, constraints: { subdomian: 'api' }, path: '/' do
-    resources :leagues, only: [:index]
-  end
-  
-  scope :module, :v2, constraints: ApiConstraint.new(version: 2) do
-    resources :leagues, only: [:index]
+    scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
+      resources :leagues, only: [:index]  
+    end
   end
 end
