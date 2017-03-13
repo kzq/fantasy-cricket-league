@@ -8,9 +8,9 @@ Feature: List Leagues
   
   Scenario: List Leagues
     Given the system knows about the following leagues:
-      | league | 
-      | PSL    |
-      | IPL    | 
+      | league | origin   | 
+      | PSL    | Pakistan |
+      | IPL    | India    |
     When client requests GET "/leagues"
     Then the response status should be "200"
     And it has following attributes
