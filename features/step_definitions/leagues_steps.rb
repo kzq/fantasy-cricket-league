@@ -23,14 +23,12 @@ Then(/^the response status should be "([^"]*)"$/) do |status|
 end 
 
 Then(/^it has following attributes$/) do |table|
-  expected_items = table.hashes
-  data = JSON.parse(last_response.body)["data"][0]
-  puts ">>>>>>>>>expected_items=#{expected_items}"
-  puts ">>>>>>>>>data=#{data}"
-  expected_items.each_with_object({}) do |row, hash |
-    name, country = row["name"], row["country"]
-    k = data["attributes"].find {|h1| h1['name'] == name}
-    puts k  
-  end  
-  pending # Write code here that turns the phrase above into concrete actions
+  response = JSON.parse(last_response.body)
+  expected_items = table.raw
+  expected_items.shift
+  expected_items.each do |row|
+    name, country = row[0], row[1]
+    expect(last_response.body.include?(name)).to be(true)
+    expect(last_response.body.include?(country)).to be(true)
+  end
 end
