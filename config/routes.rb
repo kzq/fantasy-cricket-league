@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
-  resources :leagues
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api, defaults: { format: :json }, constraints: { subdomian: 'api' }, path: '/' do
+    resources :leagues, only: [:index]
+  end
+  
+  scope :module, :v2, constraints: ApiConstraint.new(version: 2) do
+    resources :leagues, only: [:index]
+  end
 end
