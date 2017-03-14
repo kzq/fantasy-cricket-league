@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  def index
+  def create
     users = User.all
     render json: users, status: 200
   end
