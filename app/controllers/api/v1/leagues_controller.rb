@@ -19,7 +19,7 @@ class Api::V1::LeaguesController < ApplicationController
   
   # GET /leagues/:id
   def show
-    
+    league = League.find()  
   end  
   
   # PUT /leagues/:id
