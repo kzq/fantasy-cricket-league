@@ -9,4 +9,9 @@ class ApplicationController < ActionController::API
     @current_user = api_request.authenticate_request! 
     render json: { errors: ['Not Authenticated'] }, status: :unauthorized unless @current_user
   end
+  
+  # The resource must have a non emty #errors object
+  def render_error(resource, status)
+    render json: resource, status: status, adapter: :json_api, serializer: ActiveModel::Serializer::ErrorSerializer  
+  end
 end
