@@ -24,7 +24,8 @@ class AuthorizeApiRequest
   end
   
   def header_present?
-    headers['Authorization'].present?
+    pattern = /^Bearer /
+    headers['Authorization'].present? && headers['Authorization'].match(pattern)
   end
   
 end
