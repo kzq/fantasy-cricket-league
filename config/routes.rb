@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
       resources :leagues, only: [:index, :create, :show, :update, :destroy]
       resources :users, only: [:create]
+      resources :players, only: [:index, :create]
       post 'login' => 'authentication#authenticate_user'   
     end
   end

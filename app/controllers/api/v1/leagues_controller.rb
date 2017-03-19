@@ -5,7 +5,7 @@ class Api::V1::LeaguesController < ApplicationController
   # GET /leagues 
   def index
     leagues = League.all
-    render json: leagues, status: 200     
+    render json: leagues, status: :ok     
   end
   
   #POST /leagues
