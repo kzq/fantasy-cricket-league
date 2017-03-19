@@ -30,6 +30,9 @@ gem 'rack-cors', require: 'rack/cors'
 # Use ActiveModelSerializers to bring convention over configuration to your JSON generation.
 gem 'active_model_serializers', '~> 0.10.0'
 
+# Use will_pagination for pagination library
+gem 'will_paginate'
+
 group :test do
   gem 'capybara'
   gem 'cucumber-rails', require: false
