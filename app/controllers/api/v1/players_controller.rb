@@ -18,7 +18,8 @@ class Api::V1::PlayersController < ApplicationController
   private
   
   def player_params
-    params.require(:player).permit(:league_id,:name,:country)
+    #params.require(:player).permit(:league_id,:name,:country)
+    ActiveModelSerializers::Deserialization.jsonapi_parse(params, only:[:league,:name,:country])
   end
   
 end
