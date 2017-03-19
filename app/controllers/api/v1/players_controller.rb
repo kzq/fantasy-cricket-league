@@ -2,7 +2,7 @@ class Api::V1::PlayersController < ApplicationController
   # GET /palayers
   def index
     players =Player.page(params[:page] ? params[:page][:number] : 1)
-    render json: players, meta: pagination_meta(players), status: :ok    
+    render json: players, meta: pagination_meta(players), include: ['league'], status: :ok    
   end
   
   #POST /players
