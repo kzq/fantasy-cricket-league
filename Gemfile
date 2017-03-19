@@ -33,6 +33,9 @@ gem 'active_model_serializers', '~> 0.10.0'
 # Use will_pagination for pagination library
 gem 'will_paginate'
 
+# Rack middleware for blocking & throttling abusive requests
+gem 'rack-attack'
+
 group :test do
   gem 'capybara'
   gem 'cucumber-rails', require: false

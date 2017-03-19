@@ -29,5 +29,8 @@ module FantasyCricketLeague
     
     # Include lib directory in path
     config.autoload_paths << Rails.root.join('lib')
+    
+    # Use Rack::Attack middleware
+    config.middleware.use Rack::Attack 
   end
 end
